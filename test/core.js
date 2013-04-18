@@ -1,0 +1,46 @@
+(function () {
+
+    "use strict";
+
+    var should = require("should"),
+        regulate = require("../lib/Regulate");
+
+    describe("conversion", function () {
+
+        it("should return a string", function () {
+            var rx = regulate().toString();
+            rx.should.be.a("string");
+        });
+
+        it("should return a RegExp instance", function () {
+            var rx = regulate().toRegExp();
+            rx.should.be.an.instanceOf(RegExp);
+        });
+
+    });
+
+    describe("strings", function () {
+
+        it("should generate regexps for single characters", function () {
+            var rx = regulate().string("a").toString();
+            rx.should.equal("a");
+        });
+
+        it("should generate regexps for simple strings", function () {
+            var rx = regulate().string("abc").toString();
+            rx.should.equal("abc");
+        });
+
+        it("should generate regexps for spaces", function () {
+            var rx = regulate().string("   ").toString();
+            rx.should.equal("   ");
+        });
+
+        it("should escape characters with special meanings", function () {
+            var rx = regulate().string("a+").toString();
+            rx.should.equal("a\\+");
+        });
+
+    });
+
+}());
