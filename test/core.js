@@ -37,8 +37,32 @@
         });
 
         it("should escape characters with special meanings", function () {
-            var rx = regulate().string("a+").toString();
-            rx.should.equal("a\\+");
+            var rx = regulate().string("[]()\\^$.|?*+").toString();
+            rx.should.equal("\\[\\]\\(\\)\\\\\\^\\$\\.\\|\\?\\*\\+");
+        });
+
+        it("should chain simple strings together", function () {
+            var rx = regulate().string("ab").string("cd").toString();
+            rx.should.equal("abcd");
+        });
+
+    });
+
+    describe("anchors", function () {
+
+        it("should generate regexps anchored to the start of a string", function () {
+            var rx = regulate().start().string("abc").toString();
+            rx.should.equal("^abc");
+        });
+
+        it("should generate regexps anchored to the end of a string", function () {
+            var rx = regulate().string("abc").end().toString();
+            rx.should.equal("abc$");
+        });
+
+        it("should generate regexps anchored to the start and end of a string", function () {
+            var rx = regulate().start().string("abc").end().toString();
+            rx.should.equal("^abc$");
         });
 
     });
