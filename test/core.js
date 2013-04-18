@@ -67,4 +67,18 @@
 
     });
 
+    describe("dot", function () {
+
+        it("should generate regexps to match any character except line breaks", function () {
+            var rx = regulate().anything().toString();
+            rx.should.equal(".");
+        });
+
+        it("should generate regexps to match any character including line breaks", function () {
+            var rx = regulate().anything(true).toString();
+            rx.should.equal("[\\s\\S]");
+        });
+
+    });
+
 }());
