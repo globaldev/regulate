@@ -1,0 +1,11 @@
+{
+    "name": "regulate",
+    "version": "0.0.1",
+    "description": "Build regular expressions quickly and semantically",
+    "devDependencies": {
+        "grunt": "0.4.x",
+        "grunt-contrib-jshint": "0.3.x",
+        "grunt-simple-mocha": "0.3.x",
+        "should": "1.2.x"
+    }
+}
