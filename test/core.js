@@ -100,4 +100,36 @@
 
     });
 
+    // TODO: Improve this because it currently runs a huge number of individual tests
+    describe("ranges", function () {
+
+        var data = new Array(1001).join(" ").split(" "),
+            ranges = [
+                [0, 10],
+                [1, 10],
+                [1, 99],
+                [1, 100],
+                [50, 500],
+                [99, 100],
+                [1, 1000],
+                [0, 1000],
+                [46, 243]
+            ];
+
+        ranges.forEach(function (range) {
+            var rx = regulate().start().range(range[0], range[1]).end().toRegExp();
+            data.forEach(function (e, i) {
+                it("should generate a regexp for the range " + range[0] + "-" + range[1], function () {
+                    var result = rx.test(i);
+                    if (range[0] <= i && range[1] >= i) {
+                        result.should.equal(true);
+                    } else {
+                        result.should.equal(false);
+                    }
+                });
+            });
+        });
+
+    });
+
 }());
