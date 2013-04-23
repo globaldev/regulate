@@ -81,4 +81,23 @@
 
     });
 
+    describe("character classes", function () {
+
+        it("should generate regexps to match one character out of many", function () {
+            var rx = regulate().charIn("a", "b", "c").toString();
+            rx.should.equal("[abc]");
+        });
+
+        it("should generate regexps to match one character that is not in a list", function () {
+            var rx = regulate().charNotIn("a", "b", "c").toString();
+            rx.should.equal("[^abc]");
+        });
+
+        it("should appropriately escape characters in classes", function () {
+            var rx = regulate().charIn("]", "^", "-", "\\").toString();
+            rx.should.equal("[\\]\\^\\-\\\\]");
+        });
+
+    });
+
 }());
