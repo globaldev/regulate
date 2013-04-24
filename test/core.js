@@ -150,4 +150,50 @@
 
     });
 
+    describe("repetition", function () {
+
+        it("should generate regexps including 'any number' repeats", function () {
+            var rx = regulate().anything().repeat(-1).toString();
+            rx.should.equal(".*");
+        });
+
+        it("should generate regexps including 'one or more' repeats", function () {
+            var rx = regulate().anything().repeat(1, 0).toString();
+            rx.should.equal(".+");
+        });
+
+        it("should generate regexps including repeats bound to a minimum and maximum", function () {
+            var rx = regulate().anything().repeat(1, 5).toString();
+            rx.should.equal(".{1,5}");
+        });
+
+        it("should generate regexps including repeats bound to a minimum", function () {
+            var rx = regulate().anything().repeat(3, 0).toString();
+            rx.should.equal(".{3,}");
+        });
+
+    });
+
+    // TODO: Expand this set of tests
+    describe("grouping", function () {
+
+        it("should generate regexps including capturing groups", function () {
+            var rx = regulate().string("name: ").group(regulate().anything().repeat(1, 0)).end();
+            rx.toString().should.equal("name: (.+)$");
+        });
+
+    });
+
+    // TODO: Expand this set of tests
+    describe("alternation", function () {
+
+        it("should generate regexps including the or operator", function () {
+            var rx = regulate().string("dog").or().string("cat");
+            rx.toString().should.equal("dog|cat");
+            rx.toRegExp().test("dog").should.equal(true);
+            rx.toRegExp().test("fish").should.equal(false);
+        });
+
+    });
+
 }());
