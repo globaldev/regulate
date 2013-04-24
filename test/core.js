@@ -117,7 +117,7 @@
             ];
 
         ranges.forEach(function (range) {
-            var rx = regulate().start().range(range[0], range[1]).end().toRegExp();
+            var rx = regulate().start().range([range[0], range[1]]).end().toRegExp();
             data.forEach(function (e, i) {
                 it("should generate a regexp for the range " + range[0] + "-" + range[1], function () {
                     var result = rx.test(i);
