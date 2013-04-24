@@ -132,4 +132,22 @@
 
     });
 
+    describe("word boundaries", function () {
+
+        it("should generate regexps including word boundaries", function () {
+            var rx = regulate().wordBoundary().string("word").wordBoundary();
+            rx.toString().should.equal("\\bword\\b");
+            rx.toRegExp().test("string with word in it").should.equal(true);
+            rx.toRegExp().test("not in this string").should.equal(false);
+        });
+
+        it("should generate regexps including negated word boundaries", function () {
+            var rx = regulate().wordBoundary(true).string("word");
+            rx.toString().should.equal("\\Bword");
+            rx.toRegExp().test("string with sword in it").should.equal(true);
+            rx.toRegExp().test("string with word in it").should.equal(false);
+        });
+
+    });
+
 }());
