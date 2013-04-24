@@ -5,6 +5,7 @@
     "devDependencies": {
         "grunt": "0.4.x",
         "grunt-contrib-jshint": "0.3.x",
+        "grunt-contrib-uglify": "0.2.x",
         "grunt-simple-mocha": "0.3.x",
         "should": "1.2.x"
     }

@@ -14,6 +14,13 @@ module.exports = function (grunt) {
                 "Gruntfile.js"
             ]
         },
+        uglify: {
+            dist: {
+                files: {
+                    "build/Regulate.min.js": ["lib/Regulate.js"]
+                }
+            }
+        },
         simplemocha: {
             all: {
                 src: "test/**/*.js"
@@ -22,11 +29,13 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-simple-mocha");
 
     grunt.registerTask("default", [
         "jshint",
-        "simplemocha"
+        "simplemocha",
+        "uglify"
     ]);
 
 };
