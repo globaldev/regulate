@@ -7,7 +7,20 @@ module.exports = function (grunt) {
             options: {
                 node: true,
                 es5: true,
-                "-W032": true // Tolerate leading semicolon
+                "-W032": true, // Tolerate leading semicolon
+                curly: true,
+                eqeqeq: true,
+                forin: true,
+                immed: true,
+                latedef: true,
+                quotmark: "double",
+                undef: true,
+                unused: true,
+                strict: true,
+                trailing: true,
+                globals: {
+                    define: true
+                }
             },
             files: [
                 "lib/**/*.js",
