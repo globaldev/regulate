@@ -10,7 +10,7 @@ Or just include the script in your page:
 
     <script src="Regulate.min.js"></script>
     
-To build the minified script yourself simply clone the repository and run the Grunt build script to generate a *build* directory in the project root:
+To build the minified script yourself simply clone the repository and run the Grunt build script to generate a *build* directory in the project root. Please note that you will need Grunt 0.4 at least:
 
     grunt uglify
 
@@ -31,4 +31,4 @@ If you would like to contribute to Regulate please have a look at the contributi
 
 ## Licence
 
-Regulate is distributed under the MIT License. See the [LICENCE](https://github.com/globaldev/regulate/blob/master/LICENSE) file for the full licence text.
+Regulate is distributed under the MIT License. See the [LICENSE](https://github.com/globaldev/regulate/blob/master/LICENSE) file for the full licence text. Copyright © 2013 Global Personals, Ltd.
