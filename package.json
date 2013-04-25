@@ -2,6 +2,11 @@
     "name": "regulate",
     "version": "0.0.1",
     "description": "Build regular expressions quickly and semantically",
+    "author": {
+        "name": "James Allardice",
+        "email": "admin@jamesallardice.com",
+        "url": "http://jamesallardice.com"
+    },
     "devDependencies": {
         "grunt": "0.4.x",
         "grunt-contrib-jshint": "0.3.x",
