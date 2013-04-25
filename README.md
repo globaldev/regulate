@@ -22,3 +22,7 @@ Regulate exposes a single global function, `Regulate`. It's effectively a factor
 var rxUser = Regulate().start().charIn(["a", "z"], [0, 9], "_").repeat(3, 16).end();
 rxUser.toString(); // '^[a-z0-9_]{3, 16}$'
 ```
+
+## Contributing
+
+If you would like to contribute to Regulate please have a look at the contribution guidelines. You'll need Grunt 0.4 or above to develop Regulate locally. Thanks, and we look forward to your patches!
