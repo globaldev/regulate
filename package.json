@@ -7,6 +7,10 @@
         "email": "admin@jamesallardice.com",
         "url": "http://jamesallardice.com"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/globaldev/regulate.git"
+    },
     "devDependencies": {
         "grunt": "0.4.x",
         "grunt-contrib-jshint": "0.3.x",
