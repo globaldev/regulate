@@ -13,3 +13,11 @@ Or just include the script in your page:
 To build the minified script yourself simply clone the repository and run the Grunt build script to generate a *build* directory in the project root:
 
     grunt uglify
+
+## Usage
+
+Regulate exposes a single global function, `Regulate`. It's effectively a factory function that returns an instance. Almost all of the Regulate instance methods return the same instance to allow for chaining. Here's a simple example that builds a regular expression to match a 3-16 character "username" made up of lower-case characters, underscores and digits:
+
+```javascript
+Regulate().start().charIn(["a", "z"], [0, 9], "_").repeat(3, 16).end();
+```
