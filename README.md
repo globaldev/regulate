@@ -28,3 +28,7 @@ For details of all the available methods have a look at [the API](https://github
 ## Contributing
 
 If you would like to contribute to Regulate please have a look at the contribution guidelines. You'll need Grunt 0.4 or above to develop Regulate locally. Thanks, and we look forward to your patches!
+
+## Licence
+
+Regulate is distributed under the MIT License. See the [LICENCE](https://github.com/globaldev/regulate/blob/master/LICENSE) file for the full licence text.
