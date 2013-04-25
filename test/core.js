@@ -98,6 +98,11 @@
             rx.should.equal("[\\]\\^\\-\\\\]");
         });
 
+        it("should allow simple ranges in character classes", function () {
+            var rx = regulate().charIn(["a", "z"], [0, 9], "_").toString();
+            rx.should.equal("[a-z0-9_]");
+        });
+
     });
 
     // TODO: Improve this because it currently runs a huge number of individual tests
